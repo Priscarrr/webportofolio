@@ -155,8 +155,10 @@
 /* Tabs Section */
 .tab-container {
   position: relative;
-  min-height: 500px;
-  padding-top: 80px; /* jarak tab-section dari navbar */
+  padding-top: 120px; /* jarak dari navbar */
+  min-height: calc(100vh - 80px); /* body full height minus navbar */
+  display: flex;
+  flex-direction: column;
 }
 .tab-section {
   position: absolute;
@@ -170,6 +172,15 @@
 .tab-section.show {
   opacity: 1;
   pointer-events: all;
+}
+
+/* Footer */
+footer {
+  flex-shrink: 0;
+  padding: 1.5rem;
+  text-align: center;
+  color: #a1a1aa;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* Fade-up animation */
@@ -195,5 +206,18 @@
   }
   .project-card {
     margin-bottom: 1rem;
+  }
+
+  /* Mobile Tab Section */
+  .tab-section {
+    position: relative;
+    top: auto;
+    opacity: 1;
+    pointer-events: all;
+    transition: none;
+  }
+  .tab-container {
+    padding-top: 20px;
+    min-height: auto;
   }
 }
