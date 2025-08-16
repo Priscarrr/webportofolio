@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Priscarrr</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 text-white font-sans scroll-smooth"
+  >
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative"
+    >
+      <h1 class="text-5xl font-extrabold mb-4 drop-shadow-lg">
+        Hi, I'm <span class="text-gradient">Priscarrr</span>
+      </h1>
+      <p class="typing text-lg text-gray-300 mb-6"></p>
+      <div class="space-x-4">
+        <a
+          href="https://github.com/Priscarrr"
+          target="_blank"
+          class="btn-gradient"
+          >GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/alif-priscar-satria-8b170137a/"
+          target="_blank"
+          class="btn-gradient"
+          >LinkedIn</a
+        >
+      </div>
+      <div class="absolute bottom-10 animate-bounce">
+        <a href="#tabs" class="text-gray-400">⬇ Scroll</a>
+      </div>
+    </section>
+
+    <!-- Navbar Horizontal -->
+    <div
+      id="tabs"
+      class="flex justify-center space-x-6 py-4 bg-gray-900 sticky top-0 z-50 shadow-lg"
+    >
+      <button type="button" data-tab="about" class="tab-btn active">
+        About Me
+      </button>
+      <button type="button" data-tab="stack" class="tab-btn">Tech Stack</button>
+      <button type="button" data-tab="projects" class="tab-btn">
+        Projects
+      </button>
+      <button type="button" data-tab="contact" class="tab-btn">Contact</button>
+    </div>
+
+    <!-- Tab Container -->
+    <div class="tab-container max-w-6xl mx-auto px-6 py-20">
+      <section id="about" class="tab-section fade show">
+        <div class="about-container grid md:grid-cols-2 gap-12 items-center">
+          <div class="about-image flex justify-center">
+            <img
+              src="gambar/profile.jpg"
+              alt="My Photo"
+              class="profile-pic hover:scale-105"
+            />
+          </div>
+          <div class="about-text">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4">About Me</h2>
+            <p class="text-gray-300 leading-relaxed">
+              Saya seorang mahasiswa dari
+              <strong>Universitas Dinamika Bangsa</strong> yang tertarik pada
+              <span class="highlight-blue">Web Development</span> dan
+              <span class="highlight-purple">Game Development</span>. Saat ini
+              saya masih belajar dan bereksperimen dengan
+              <strong>HTML, CSS, JavaScript, C#, dan Dart</strong>. Saya senang
+              membuat project interaktif sambil mengeksplorasi hal baru dalam
+              pengembangan aplikasi dan game.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="stack" class="tab-section fade">
+        <h2 class="text-3xl font-semibold text-center mb-10">Tech Stack</h2>
+        <div class="flex flex-wrap justify-center gap-8">
+          <span class="stack-card">HTML</span>
+          <span class="stack-card">CSS</span>
+          <span class="stack-card">JavaScript</span>
+          <span class="stack-card">C#</span>
+          <span class="stack-card">Dart</span>
+        </div>
+      </section>
+
+      <section id="projects" class="tab-section fade">
+        <h2 class="text-3xl font-semibold text-center mb-10">Projects</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="project-card">
+            <img src="gambar/project1.png" alt="Portfolio Website" />
+            <div class="project-overlay">
+              <a
+                href="https://github.com/Priscarrr"
+                class="text-white px-4 py-2 border rounded-lg"
+                >Lihat Repo</a
+              >
+            </div>
+            <h3 class="text-xl font-semibold mb-2">🌐 Portfolio Website</h3>
+            <p class="text-gray-400 mb-3">
+              Personal website dengan Tailwind + animasi.
+            </p>
+          </div>
+          <div class="project-card">
+            <img src="gambar/project2.png" alt="Game Project" />
+            <div class="project-overlay">
+              <a
+                href="https://github.com/Priscarrr/PixelAdventureGame"
+                class="text-white px-4 py-2 border rounded-lg"
+                >Lihat Repo</a
+              >
+            </div>
+            <h3 class="text-xl font-semibold mb-2">🎮 Game Project</h3>
+            <p class="text-gray-400 mb-3">
+              Proyek game kecil dengan Unity + C#.
+            </p>
+          </div>
+          <div class="project-card">
+            <img src="gambar/project3.png" alt="Mobile App" />
+            <div class="project-overlay">
+              <a
+                href="https://github.com/Priscarrr/WutheringWaves-CharacterDex"
+                class="text-white px-4 py-2 border rounded-lg"
+                >Lihat Repo</a
+              >
+            </div>
+            <h3 class="text-xl font-semibold mb-2">📱 Mobile App</h3>
+            <p class="text-gray-400 mb-3">
+              App sederhana pakai Flutter & Dart.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="tab-section fade">
+        <h2 class="text-3xl font-semibold mb-6 text-center">Contact Me</h2>
+        <p class="text-gray-400 mb-3 text-center">
+          📧 Email:
+          <a href="mailto:priscarsatria@gmail.com" class="text-gradient"
+            >Ppiscarsatria@gmail.com</a
+          >
+        </p>
+        <p class="text-gray-400 mb-6 text-center">
+          🌍 Location: Jambi, Indonesia
+        </p>
+        <form class="contact-form flex flex-col gap-4 max-w-md mx-auto">
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <textarea placeholder="Message"></textarea>
+          <button type="submit" class="btn-gradient">Send</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-500 text-sm bg-black/40">
+      © 2025 Priscarrr - All Rights Reserved
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
