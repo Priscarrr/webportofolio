@@ -153,27 +153,23 @@
 }
 
 /* Tabs Section */
-/* Tabs Section - Desktop */
+.tab-container {
+  position: relative;
+  min-height: 500px;
+  padding-top: 80px; /* jarak tab-section dari navbar */
+}
 .tab-section {
   position: absolute;
-  top: 0;
+  top: 100px;
   left: 0;
   width: 100%;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
 }
-
 .tab-section.show {
   opacity: 1;
   pointer-events: all;
-}
-
-/* Tab Container */
-.tab-container {
-  position: relative;
-  min-height: 500px;
-  padding-top: 120px;
 }
 
 /* Fade-up animation */
@@ -187,17 +183,17 @@
   transform: translateY(0);
 }
 
-/* Mobile Override */
+/* Responsive */
 @media (max-width: 768px) {
-  .tab-section {
-    position: relative;
-    top: auto;
-    opacity: 1;
-    pointer-events: all;
-    transition: none;
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
-  .tab-container {
-    min-height: auto;
-    padding-top: 20px;
+  .about-text h2,
+  .about-text p {
+    text-align: center;
+  }
+  .project-card {
+    margin-bottom: 1rem;
   }
 }
