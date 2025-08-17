@@ -1,4 +1,14 @@
-/* Gradient Text & Buttons */
+/* General & Gradient Text/Buttons */
+body {
+  font-family: sans-serif;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  color: white;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .text-gradient {
   background: linear-gradient(90deg, #60a5fa, #a78bfa);
   background-clip: text;
@@ -6,18 +16,91 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
+
 .btn-gradient {
   background: linear-gradient(90deg, #60a5fa, #a78bfa);
   padding: 0.75rem 1.5rem;
   border-radius: 0.75rem;
   font-weight: 500;
-  transition: transform 0.3s ease;
   display: inline-block;
   color: white;
   text-decoration: none;
+  transition: transform 0.3s ease;
 }
 .btn-gradient:hover {
   transform: scale(1.05);
+}
+
+/* Tabs Navbar */
+.tab-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(55, 65, 81, 0.6);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+.tab-btn:hover {
+  background: rgba(96, 165, 250, 0.8);
+  transform: scale(1.05);
+}
+.tab-btn.active {
+  background: rgba(96, 165, 250, 1);
+  box-shadow: 0 0 10px #60a5fa;
+}
+
+/* Tabs Section */
+.tab-container {
+  width: 100%;
+  padding-top: 4rem; /* jarak dari navbar */
+  flex: 1;
+}
+
+.tab-section {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  margin-bottom: 2rem;
+}
+
+.tab-section.show {
+  display: block;
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* About Section */
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  gap: 2rem;
+}
+.profile-pic {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.about-text p {
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+.highlight-blue {
+  color: #60a5fa;
+}
+.highlight-purple {
+  color: #a78bfa;
 }
 
 /* Stack Cards */
@@ -26,7 +109,6 @@
   background: rgba(55, 65, 81, 0.5);
   backdrop-filter: blur(10px);
   border-radius: 0.75rem;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
   color: white;
   font-weight: 500;
   transition: transform 0.3s ease, background 0.3s ease;
@@ -40,16 +122,12 @@
 .project-card {
   background: rgba(31, 41, 55, 0.6);
   backdrop-filter: blur(12px);
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-}
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .project-card img {
   border-radius: 0.75rem;
@@ -67,41 +145,6 @@
 }
 .project-card:hover .project-overlay {
   opacity: 1;
-}
-
-/* About Section */
-.about-container {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  align-items: center;
-  gap: 40px;
-}
-.profile-pic {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.profile-pic:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-}
-.about-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-.about-text p {
-  color: #cbd5e1;
-  line-height: 1.8;
-}
-.highlight-blue {
-  color: #60a5fa;
-}
-.highlight-purple {
-  color: #a78bfa;
 }
 
 /* Contact Form */
@@ -133,56 +176,6 @@
   min-height: 28px;
 }
 
-/* Tabs Navbar */
-.tab-btn {
-  padding: 0.5rem 1rem;
-  background: rgba(55, 65, 81, 0.6);
-  border-radius: 0.5rem;
-  color: white;
-  font-weight: 500;
-  transition: background 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
-}
-.tab-btn:hover {
-  background: rgba(96, 165, 250, 0.8);
-  transform: scale(1.05);
-}
-.tab-btn.active {
-  background: rgba(96, 165, 250, 1);
-  box-shadow: 0 0 10px #60a5fa;
-}
-
-/* Tabs Section */
-.tab-container {
-  position: relative;
-  padding-top: 120px; /* jarak dari navbar */
-  min-height: calc(100vh - 80px); /* body full height minus navbar */
-  display: flex;
-  flex-direction: column;
-}
-.tab-section {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-}
-.tab-section.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* Footer */
-footer {
-  flex-shrink: 0;
-  padding: 1.5rem;
-  text-align: center;
-  color: #a1a1aa;
-  background: rgba(0, 0, 0, 0.6);
-}
-
 /* Fade-up animation */
 .fade-up {
   opacity: 0;
@@ -192,6 +185,14 @@ footer {
 .fade-up.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111827;
+  color: #999;
 }
 
 /* Responsive */
@@ -206,18 +207,5 @@ footer {
   }
   .project-card {
     margin-bottom: 1rem;
-  }
-
-  /* Mobile Tab Section */
-  .tab-section {
-    position: relative;
-    top: auto;
-    opacity: 1;
-    pointer-events: all;
-    transition: none;
-  }
-  .tab-container {
-    padding-top: 20px;
-    min-height: auto;
   }
 }

@@ -4,7 +4,6 @@ let i = 0,
   j = 0;
 const speed = 120;
 const typingElement = document.querySelector(".typing");
-
 function typeEffect() {
   if (j < text[i].length) {
     typingElement.innerHTML += text[i].charAt(j);
@@ -21,23 +20,20 @@ function typeEffect() {
 }
 typeEffect();
 
-// Tabs
+// Tabs functionality
 const tabs = document.querySelectorAll(".tab-btn");
 const sections = document.querySelectorAll(".tab-section");
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
-    // Remove active class
     tabs.forEach((t) => t.classList.remove("active"));
     tab.classList.add("active");
-
-    // Show selected section
     const target = tab.getAttribute("data-tab");
-    sections.forEach((section) => {
-      if (section.id === target) {
-        section.classList.add("show", "fade-up");
+    sections.forEach((sec) => {
+      if (sec.id === target) {
+        sec.classList.add("show", "fade-up");
       } else {
-        section.classList.remove("show", "fade-up");
+        sec.classList.remove("show", "fade-up");
       }
     });
   });
